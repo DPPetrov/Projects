@@ -164,8 +164,50 @@ public class CoffeeMachine01 {
 
         }
     }
-    public static void prepareLatte(){
+    public static void prepareLatte()throws InterruptedException{
+        System.out.println("Please insert $2.50 ");
+        pay = Double.parseDouble(sc.nextLine());
+        if (pay > 3.5) {
+            change = pay - 3.5;
+            coffee -= 45;
+            milk -= 25;
+            water -= 60;
+            cups -= 1;
+        }
+        System.out.println("Would you like sugar? (Y/N)");
+        input = sc.nextLine();
 
+        if (input.equalsIgnoreCase("y")){
+            sugar -= 30;
+        }
+
+        System.out.println("Preparing Latte...");
+        Thread.sleep(1500);
+        System.out.println("Grinding coffee beans...");
+        Thread.sleep(1800);
+        System.out.println("Boiling water...");
+        Thread.sleep(2000);
+        System.out.println("Almost done!");
+        Thread.sleep(1900);
+        System.out.printf("Drink ready! Your change is: %.2f\n", change);
+        Thread.sleep(1500);
+
+
+        if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
+            System.out.println("Would you like another Drink?");
+            question = sc.nextLine();
+            if (question.equalsIgnoreCase("y")){
+
+                selectDrink();
+
+            }else if (question.equalsIgnoreCase("n")){
+
+                System.exit(0);
+            }
+        }else{
+            System.out.println("Apologies! The machine needs to be refilled!");
+
+        }
     }
 
 
