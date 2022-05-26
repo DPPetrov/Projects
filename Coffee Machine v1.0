@@ -206,7 +206,7 @@ public class CoffeeMachine01 {
             }
         }else{
             System.out.println("Apologies! The machine needs to be refilled!");
-
+                System.exit(0);
         }
     }
 
