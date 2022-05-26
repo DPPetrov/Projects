@@ -1,5 +1,4 @@
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class CoffeeMachine01 {
@@ -59,10 +58,11 @@ public class CoffeeMachine01 {
                     while(!input. equalsIgnoreCase("stop"))  {
                                 input = sc.nextLine();
                         switch (input.toLowerCase()){
-
+                        
+                            
                             case "e" :
 
-                                System.out.print("Please insert $0.5\n ");
+                                System.out.print("Please insert $1.50 ");
                                 pay = Double.parseDouble(sc.nextLine());
                                 if (pay > 1.5) {
                                     change = pay - 1.5;
@@ -70,15 +70,15 @@ public class CoffeeMachine01 {
                                     water -= 50;
                                     milk -= 50;
                                     cups -= 1;
+                                    System.out.println();
                                     System.out.println("Would you like sugar? (Y/N)");
                                     question = sc.nextLine();
 
                                     if (question.equalsIgnoreCase("y")){
-                                        System.out.print("Please select sugar level (1 - 3)\n");
                                         sugar -= 40;
-                                        prepare();
+                                        prepareEspresso();
                                     }else if (question.equalsIgnoreCase("n")){
-                                        prepare();
+                                        prepareEspresso();
                                     }
                                 }else{
                                     System.out.println("Not enough money");
@@ -97,10 +97,18 @@ public class CoffeeMachine01 {
 
 
                     }
-              
+
     }
-    
-    public static void prepare () throws InterruptedException{
-        
+
+    public static void prepareEspresso () throws InterruptedException{
+        System.out.println("Preparing Espresso...");
+        Thread.sleep(1500);
+        System.out.println("Grinding coffee beans...");
+        Thread.sleep(1800);
+        System.out.println("Boiling water...");
+        Thread.sleep(2000);
+        System.out.println("Almost done!");
+        Thread.sleep(1900);
+        System.out.println("Drink ready!");
     }
 }
