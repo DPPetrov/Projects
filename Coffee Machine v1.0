@@ -109,19 +109,6 @@ public class CoffeeMachine01 {
                      System.out.printf("Drink ready! Your change is: %.2f\n", change);
                      Thread.sleep(1500);
 
-//        System.out.println("Ingredients available:");
-//            Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
-//                System.out.printf("%.1fkg of Coffee beans\n",coffee);
-//                Thread.sleep(1000);
-//                    System.out.printf("%.1fl of Milk\n", milk);
-//                    Thread.sleep(1000);
-//                         System.out.printf("%.1fml of Water\n", water);
-//                         Thread.sleep(1000);
-//                            System.out.printf("%.1fg of Sugar\n", sugar);
-//                            Thread.sleep(1000);
-//                                 System.out.printf( "%dpcs of Cups\n", cups);
-//                                     System.out.println("====================");
-//                                        Thread.sleep(1300);
 
                                         if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
                                             System.out.println("Would you like another Drink?");
