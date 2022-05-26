@@ -46,6 +46,13 @@ public class CoffeeMachine01 {
         //Ask user if they would like milk || sugar
         //If the user wants sugar, they must choose one of 3 lvls
         //Continue to preparation
-
+            switch (input.toLowerCase()){
+                        case "e":
+                            System.out.println("Espresso");
+                            break;
+                        case "c":
+                            System.out.println("Cappuccino");
+                            break;
+                        default:
     }
 }
