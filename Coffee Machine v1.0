@@ -39,6 +39,7 @@ public class CoffeeMachine01 {
                                 System.out.printf( "%dpcs of Cups\n", cups);
 
           //Prompt the user to select one of the following drinks
+          Thread.sleep(1000);
         System.out.println("You are welcome to one of the following drinks:");
         System.out.println("(E)spresso, (C)appucchino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
         //Ask user if they would like milk || sugar
