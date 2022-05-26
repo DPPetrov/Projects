@@ -31,6 +31,7 @@ public class CoffeeMachine01 {
         // values of the ingredients are preset and subject to change
 
         double coffee = 1000, milk = 1000, water = 500, sugar = 200;
+        String question = "";
         int cups = 9;
             Thread.sleep(1000);
         System.out.println("====================");
@@ -53,10 +54,14 @@ public class CoffeeMachine01 {
             //Check for choices
             Scanner sc = new Scanner(System.in);
                 String input = sc.nextLine();
+                //Calculate user choices:
                     while(!input. equalsIgnoreCase("exit")) {
                                 input = sc.nextLine();
                         switch (input.toLowerCase()) {
                             case "e" -> System.out.println("Preparing Espresso");
+                            if (coffee > 10 && water > 20 && ){
+                                
+                            }
                             case "c" -> System.out.println("Preparing Cappuccino");
                             case "l" -> System.out.println("Preparing Latte");
                             default -> System.out.println("Invalid product! Please select a product from the list above!");
