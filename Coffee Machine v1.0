@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 public class CoffeeMachine01 {
     public static void main(String[] args)throws InterruptedException {
         System.out.println("(  )   (   )  )   ");
@@ -30,7 +33,7 @@ public class CoffeeMachine01 {
         double coffee = 1000, milk = 1000, water = 500, sugar = 200;
         int cups = 9;
             Thread.sleep(1000);
-            System.out.println("====================");
+        System.out.println("====================");
             System.out.println("Ingredients available:");
             Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
                 System.out.printf("%.1fkg of Coffee beans\n",coffee);
@@ -38,35 +41,30 @@ public class CoffeeMachine01 {
                         System.out.printf("%.1fml of Water\n", water);
                             System.out.printf("%.1fg of Sugar\n", sugar);
                                 System.out.printf( "%dpcs of Cups\n", cups);
-                                System.out.println("====================");
-
+                                    System.out.println("====================");
           //Prompt the user to select one of the following drinks
-          Thread.sleep(1000);
-          System.out.println("====================");
-        System.out.println("You are welcome to one of the following drinks:");
         Thread.sleep(1000);
-        System.out.println("(E)spresso, (C)appucchino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
+        System.out.println("You are welcome to one of the following drinks:");
+        System.out.println("====================");
+        Thread.sleep(1000);
+        System.out.println("(E)spresso, (C)appuccino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
         System.out.println("====================");
         System.out.print("Please type in your choice: ");
-        //Ask user if they would like milk || sugar
+            //Check for choices
+            Scanner sc = new Scanner(System.in);
+                String input = sc.nextLine();
+                    while(!input. equalsIgnoreCase("exit")) {
+                                input = sc.nextLine();
+                        switch (input.toLowerCase()) {
+                            case "e" -> System.out.println("Preparing Espresso");
+                            case "c" -> System.out.println("Preparing Cappuccino");
+                            case "l" -> System.out.println("Preparing Latte");
+                            default -> System.out.println("Invalid product! Please select a product from the list above!");
+                        }
+                    }
+        //After they make a choice ask user if they would like milk || sugar
         //If the user wants sugar, they must choose one of 3 lvls
         //Continue to preparation
-         while(!input. equalsIgnoreCase("exit")) {
-                                input = sc.nextLine();
-            switch (input.toLowerCase()){
-                        case "e":
-                            System.out.println("Preparing Espresso");
-                            break;
-                        case "c":
-                            System.out.println("Preparing Cappuccino");
-                            break;
-                            case "l":
-                            System.out.println("Preparing Latte");
-                            break;
-                        default:
-                         System.out.println("Invalid product! Please select a product from the list above!");
-                            break;
-                    }
-                 }
+
     }
 }
