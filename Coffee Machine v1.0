@@ -112,7 +112,7 @@ public class CoffeeMachine01 {
                 Thread.sleep(2000);
                  System.out.println("Almost done!");
                     Thread.sleep(1900);
-                     System.out.println("Drink ready!");
+                     System.out.printf("Drink ready! Your change is: %.2f\n", change);
                      Thread.sleep(1500);
         System.out.println("Ingredients available:");
             Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
