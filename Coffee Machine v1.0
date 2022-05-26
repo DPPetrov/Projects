@@ -51,6 +51,8 @@ public class CoffeeMachine01 {
         //Ask user if they would like milk || sugar
         //If the user wants sugar, they must choose one of 3 lvls
         //Continue to preparation
+         while(!input. equalsIgnoreCase("exit")) {
+                                input = sc.nextLine();
             switch (input.toLowerCase()){
                         case "e":
                             System.out.println("Preparing Espresso");
@@ -65,5 +67,6 @@ public class CoffeeMachine01 {
                          System.out.println("Invalid product! Please select a product from the list above!");
                             break;
                     }
+                 }
     }
 }
