@@ -142,6 +142,8 @@ public class CoffeeMachine01 {
         Thread.sleep(1800);
         System.out.println("Boiling water...");
         Thread.sleep(2000);
+        System.out.println("Adding milk...");
+        Thread.sleep(1500);
         System.out.println("Almost done!");
         Thread.sleep(1900);
         System.out.printf("Drink ready! Your change is: %.2f\n", change);
