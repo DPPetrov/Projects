@@ -127,7 +127,7 @@ public class CoffeeMachine01 {
                                             System.out.println("Would you like another Drink?");
                                             question = sc.nextLine();
                                             if (question.equalsIgnoreCase("y")){
-                                                System.out.println("Please select a drink");
+                                                
                                                 selectDrink();
 
                                             }else if (question.equalsIgnoreCase("n")){
