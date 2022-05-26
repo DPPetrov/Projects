@@ -1,0 +1,47 @@
+public class CoffeeMachine01 {
+    public static void main(String[] args)throws InterruptedException {
+        System.out.println("(  )   (   )  )   ");
+        Thread.sleep(400);
+        System.out.println("     ) (   )  (  (");
+        Thread.sleep(400);
+        System.out.println("     ( )  (    ) )");
+        Thread.sleep(400);
+        System.out.println("     _____________");
+        Thread.sleep(400);
+        System.out.println("    <_____________> ___");
+        Thread.sleep(400);
+        System.out.println("    |             |/ _ \\");
+        Thread.sleep(400);
+        System.out.println("    |               | | |");
+        Thread.sleep(400);
+        System.out.println("    |               |_| |");
+        Thread.sleep(400);
+        System.out.println(" ___|             |\\___/");
+        Thread.sleep(400);
+        System.out.println("/    \\___________/    \\");
+        Thread.sleep(400);
+        System.out.println("\\_____________________/");
+        Thread.sleep(1000);
+        System.out.println("Coffee Machine v 1.0.0");
+        System.out.println("______________________");
+        // Loading screen, displaying the available ingredients of the machine
+        // values of the ingredients are preset and subject to change
+
+        double coffee = 1000, milk = 1000, water = 500, sugar = 200;
+        int cups = 9;
+            Thread.sleep(500);
+            System.out.println("Ingredients available:");
+            Thread.sleep(400); //The ingredient table needs to update automatically. Values need to be initiated
+                System.out.println("1.00kg of Coffee beans");
+                    System.out.println("1.00l of Milk");
+                        System.out.printf("500ml of Water");
+                            System.out.printf("%.2fg of Sugar\n", sugar);
+                                System.out.println( cup + "pcs of Cups");
+
+          //Prompt the user to select one of the following drinks
+        System.out.println("You are welcome to one of the following drinks:");
+        System.out.println("(E)spresso, (C)appucchino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
+
+
+    }
+}
