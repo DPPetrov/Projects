@@ -88,7 +88,7 @@ public class CoffeeMachine01 {
                                     System.out.println("Invalid product! Please select a product from the list above!");
                         }
 
-                        System.out.printf("Your drink is ready. Your change is $%.2f", change);
+                      //  System.out.printf("Your drink is ready. Your change is $%.2f", change);
                     }
         //After they make a choice ask user if they would like milk || sugar
         //If the user wants sugar, they must choose one of 3 lvls
