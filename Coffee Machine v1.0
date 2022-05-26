@@ -87,7 +87,11 @@ public class CoffeeMachine01 {
                                     default :
                                     System.out.println("Invalid product! Please select a product from the list above!");
                         }
-
+                         if (input.equalsIgnoreCase("e")){
+                            System.out.println("Preparing");
+                            Thread.sleep(1500);
+                            
+                        }
                     }
         //After they make a choice ask user if they would like milk || sugar
         //If the user wants sugar, they must choose one of 3 lvls
