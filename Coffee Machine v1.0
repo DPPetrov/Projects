@@ -30,6 +30,7 @@ public class CoffeeMachine01 {
         double coffee = 1000, milk = 1000, water = 500, sugar = 200;
         int cups = 9;
             Thread.sleep(1000);
+            System.out.println("====================");
             System.out.println("Ingredients available:");
             Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
                 System.out.printf("%.1fkg of Coffee beans\n",coffee);
@@ -37,6 +38,7 @@ public class CoffeeMachine01 {
                         System.out.printf("%.1fml of Water\n", water);
                             System.out.printf("%.1fg of Sugar\n", sugar);
                                 System.out.printf( "%dpcs of Cups\n", cups);
+                                System.out.println("====================");
 
           //Prompt the user to select one of the following drinks
           Thread.sleep(1000);
