@@ -93,9 +93,7 @@ public class CoffeeMachine01 {
                             
                         }
                     }
-        //After they make a choice ask user if they would like milk || sugar
-        //If the user wants sugar, they must choose one of 3 lvls
-        //Continue to preparation
+      
 
     }
 }
