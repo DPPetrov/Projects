@@ -1,4 +1,5 @@
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class CoffeeMachine01 {
@@ -31,7 +32,7 @@ public class CoffeeMachine01 {
         // values of the ingredients are preset and subject to change
 
         double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
-        String question = "";
+        String question;
         int cups = 9;
             Thread.sleep(1000);
         System.out.println("====================");
@@ -55,7 +56,7 @@ public class CoffeeMachine01 {
             Scanner sc = new Scanner(System.in);
                 String input = sc.nextLine();
                 //Calculate user choices:
-                    while(!input. equalsIgnoreCase("exit"))  {
+                    while(!input. equalsIgnoreCase("stop"))  {
                                 input = sc.nextLine();
                         switch (input.toLowerCase()){
 
@@ -63,15 +64,21 @@ public class CoffeeMachine01 {
 
                                 System.out.print("Please insert $0.5\n ");
                                 pay = Double.parseDouble(sc.nextLine());
-                                if (pay > 0.5) {
-                                    change = pay - 0.5;
-                                    System.out.print("Would you like sugar? (Y/N)");
-                                    input = sc.nextLine();
-                                    if (input.equalsIgnoreCase("y")){
+                                if (pay > 1.5) {
+                                    change = pay - 1.5;
+                                    coffee -= 30;
+                                    water -= 50;
+                                    milk -= 50;
+                                    cups -= 1;
+                                    System.out.println("Would you like sugar? (Y/N)");
+                                    question = sc.nextLine();
+
+                                    if (question.equalsIgnoreCase("y")){
                                         System.out.print("Please select sugar level (1 - 3)\n");
-                                        continue;
-                                    }else{
-                                        continue;
+                                        sugar -= 40;
+                                        prepare();
+                                    }else if (question.equalsIgnoreCase("n")){
+                                        prepare();
                                     }
                                 }else{
                                     System.out.println("Not enough money");
@@ -87,13 +94,13 @@ public class CoffeeMachine01 {
                                     default :
                                     System.out.println("Invalid product! Please select a product from the list above!");
                         }
-                         if (input.equalsIgnoreCase("e")){
-                            System.out.println("Preparing");
-                            Thread.sleep(1500);
-                            
-                        }
-                    }
-      
 
+
+                    }
+              
+    }
+    
+    public static void prepare () throws InterruptedException{
+        
     }
 }
