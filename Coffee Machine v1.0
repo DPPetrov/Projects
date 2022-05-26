@@ -68,7 +68,7 @@ public class CoffeeMachine01 {
                                    
                                      break;
                                   case "l" :
-                                   System.out.println("Preparing Latte");
+                                   
                                    break;
 
                                    case "stop":
