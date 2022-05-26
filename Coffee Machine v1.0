@@ -129,7 +129,7 @@ public class CoffeeMachine01 {
             water -= 50;
             cups -= 1;
         }else{
-            System.out.println("Not enough money! Please insert sufficient funds.");
+            System.out.println("Not enough money!");
             prepareCapuccino();
         }
         System.out.println("Would you like sugar? (Y/N)");
