@@ -1,7 +1,10 @@
 
 import java.util.Scanner;
-
 public class CoffeeMachine01 {
+    static double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
+    static int cups = 9;
+    static String question;
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args)throws InterruptedException {
         System.out.println("(  )   (   )  )   ");
         Thread.sleep(400);
@@ -27,64 +30,59 @@ public class CoffeeMachine01 {
         Thread.sleep(1000);
         System.out.println("Coffee Machine v 1.0.0");
         System.out.println("______________________");
-        // Loading screen, displaying the available ingredients of the machine
-        // values of the ingredients are preset and subject to change
-        double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
-        int cups = 9;
 
+        selectDrink();
+
+    }
+
+    public static void selectDrink() throws InterruptedException{
         Thread.sleep(1000);
         System.out.println("====================");
-            System.out.println("Ingredients available:");
-            Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
-                System.out.printf("%.1fkg of Coffee beans\n",coffee);
-                    System.out.printf("%.1fl of Milk\n", milk);
-                        System.out.printf("%.1fml of Water\n", water);
-                            System.out.printf("%.1fg of Sugar\n", sugar);
-                                System.out.printf( "%dpcs of Cups\n", cups);
-                                    System.out.println("====================");
-          //Prompt the user to select one of the following drinks
+        System.out.println("Ingredients available:");
+        Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
+        System.out.printf("%.1fkg of Coffee beans\n",coffee);
+        System.out.printf("%.1fl of Milk\n", milk);
+        System.out.printf("%.1fml of Water\n", water);
+        System.out.printf("%.1fg of Sugar\n", sugar);
+        System.out.printf( "%dpcs of Cups\n", cups);
+        System.out.println("====================");
+        //Prompt the user to select one of the following drinks
         Thread.sleep(1000);
         System.out.println("You are welcome to one of the following drinks:");
         System.out.println("====================");
         Thread.sleep(1000);
         System.out.println("(E)spresso, (C)appuccino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
         System.out.println("====================");
-        System.out.print("Please type in your choice: ");
-            //Check for choices
-            Scanner sc = new Scanner(System.in);
-                String input = sc.nextLine();
-                //Calculate user choices:
-                    while(!input. equalsIgnoreCase("stop"))  {
-                                input = sc.nextLine();
-                        switch (input){
+        System.out.println("Please type in your choice: ");
+
+        String input = sc.nextLine();
+        //Calculate user choices:
+        while(!input. equalsIgnoreCase("stop"))  {
+            input = sc.nextLine();
+            switch (input){
 
 
-                            case "E" :
-                                prepareEspresso();
-                                break;
-                                case "C" :
-                                    prepareCapuccino();
-                                     break;
-                            case "L" :
-                                   prepareLatte();
-                                    break;
+                case "E" :
+                    prepareEspresso();
+                    break;
+                case "C" :
+                    prepareCapuccino();
+                    break;
+                case "L" :
+                    prepareLatte();
+                    break;
 
-                            case "stop":
-                                    return;
-                                    default :
-                                    System.out.println("Invalid product! Please select a product from the list above!");
-                        }
+                case "stop":
+                    return;
+                default :
+                    System.out.println("Invalid product! Please select a product from the list above!");
+            }
 
 
-                    }
-
+        }
     }
 
     public static void prepareEspresso () throws InterruptedException{
-        double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
-        String question;
-        int cups = 9;
-        Scanner sc = new Scanner(System.in);
         System.out.println("Please insert $1.50 ");
         pay = Double.parseDouble(sc.nextLine());
         if (pay > 1.5) {
@@ -111,30 +109,30 @@ public class CoffeeMachine01 {
                      System.out.printf("Drink ready! Your change is: %.2f\n", change);
                      Thread.sleep(1500);
 
-        System.out.println("Ingredients available:");
-            Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
-                System.out.printf("%.1fkg of Coffee beans\n",coffee);
-                Thread.sleep(1000);
-                    System.out.printf("%.1fl of Milk\n", milk);
-                    Thread.sleep(1000);
-                         System.out.printf("%.1fml of Water\n", water);
-                         Thread.sleep(1000);
-                            System.out.printf("%.1fg of Sugar\n", sugar);
-                            Thread.sleep(1000);
-                                 System.out.printf( "%dpcs of Cups\n", cups);
-                                     System.out.println("====================");
-                                        Thread.sleep(1300);
+//        System.out.println("Ingredients available:");
+//            Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
+//                System.out.printf("%.1fkg of Coffee beans\n",coffee);
+//                Thread.sleep(1000);
+//                    System.out.printf("%.1fl of Milk\n", milk);
+//                    Thread.sleep(1000);
+//                         System.out.printf("%.1fml of Water\n", water);
+//                         Thread.sleep(1000);
+//                            System.out.printf("%.1fg of Sugar\n", sugar);
+//                            Thread.sleep(1000);
+//                                 System.out.printf( "%dpcs of Cups\n", cups);
+//                                     System.out.println("====================");
+//                                        Thread.sleep(1300);
 
                                         if (coffee > 10 && sugar > 10 && milk > 10 && water > 10) {
                                             System.out.println("Would you like another Drink?");
                                             question = sc.nextLine();
                                             if (question.equalsIgnoreCase("y")){
-                                                Thread.sleep(1000);
                                                 System.out.println("Please select a drink");
+                                                selectDrink();
 
                                             }else if (question.equalsIgnoreCase("n")){
-                                                question = "exit";
-                                                return;
+                                                question = "stop";
+
                                             }
                                         }else{
                                             System.out.println("Apologies! The machine needs to be refilled!");
