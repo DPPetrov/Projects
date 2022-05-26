@@ -58,7 +58,7 @@ public class CoffeeMachine01 {
         String input = sc.nextLine();
         //Calculate user choices:
         while(!input. equalsIgnoreCase("stop"))  {
-            input = sc.nextLine();
+         
             switch (input){
 
 
