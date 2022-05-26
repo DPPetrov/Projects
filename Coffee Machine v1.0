@@ -29,9 +29,11 @@ public class CoffeeMachine01 {
         System.out.println("______________________");
         // Loading screen, displaying the available ingredients of the machine
         // values of the ingredients are preset and subject to change
+        double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
+        String question;
+        int cups = 9;
 
-       
-            Thread.sleep(1000);
+        Thread.sleep(1000);
         System.out.println("====================");
             System.out.println("Ingredients available:");
             Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
@@ -59,28 +61,7 @@ public class CoffeeMachine01 {
 
 
                             case "e" :
-
-                                System.out.print("Please insert $1.50 ");
-                                pay = Double.parseDouble(sc.nextLine());
-                                if (pay > 1.5) {
-                                    change = pay - 1.5;
-                                    coffee -= 30;
-                                    water -= 50;
-                                    milk -= 50;
-                                    cups -= 1;
-                                    System.out.println();
-                                    System.out.println("Would you like sugar? (Y/N)");
-                                    question = sc.nextLine();
-
-                                    if (question.equalsIgnoreCase("y")){
-                                        sugar -= 40;
-                                        prepareEspresso();
-                                    }else if (question.equalsIgnoreCase("n")){
-                                        prepareEspresso();
-                                    }
-                                }else{
-                                    System.out.println("Not enough money");
-                                }
+                                prepareEspresso();
                                 break;
 
                                 case "c" :
@@ -106,17 +87,41 @@ public class CoffeeMachine01 {
         double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
         String question;
         int cups = 9;
-        
-            System.out.println("Preparing Espresso...");
-            Thread.sleep(1500);
-                System.out.println("Grinding coffee beans...");
-                Thread.sleep(1800);
-                    System.out.println("Boiling water...");
-                    Thread.sleep(2000);
-                     System.out.println("Almost done!");
-                        Thread.sleep(1900);
-                         System.out.println("Drink ready!");
-                        
-        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please insert $1.50 ");
+        pay = Double.parseDouble(sc.nextLine());
+        if (pay > 1.5) {
+            change = pay - 1.5;
+            coffee -= 30;
+            water -= 50;
+            milk -= 50;
+            cups -= 1;
+        }
+            System.out.println("Would you like sugar? (Y/N)");
+            question = sc.nextLine();
+        System.out.println("Preparing Espresso...");
+        Thread.sleep(1500);
+            System.out.println("Grinding coffee beans...");
+            Thread.sleep(1800);
+                System.out.println("Boiling water...");
+                Thread.sleep(2000);
+                 System.out.println("Almost done!");
+                    Thread.sleep(1900);
+                     System.out.println("Drink ready!");
+                     Thread.sleep(1500);
+        System.out.println("Ingredients available:");
+            Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
+                System.out.printf("%.1fkg of Coffee beans\n",coffee);
+                Thread.sleep(1000);
+                    System.out.printf("%.1fl of Milk\n", milk);
+                    Thread.sleep(1000);
+                         System.out.printf("%.1fml of Water\n", water);
+                         Thread.sleep(1000);
+                            System.out.printf("%.1fg of Sugar\n", sugar);
+                            Thread.sleep(1000);
+                                 System.out.printf( "%dpcs of Cups\n", cups);
+                                     System.out.println("====================");
+
+
     }
 }
