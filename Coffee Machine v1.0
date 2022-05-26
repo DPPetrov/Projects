@@ -58,25 +58,25 @@ public class CoffeeMachine01 {
                     while(!input. equalsIgnoreCase("exit"))  {
                                 input = sc.nextLine();
                         switch (input.toLowerCase()){
+                           
                             case "e" :
 
                                 System.out.print("Please insert $0.5 ");
                                 pay = Double.parseDouble(sc.nextLine());
                                 if (pay > 0.5) {
                                     change = pay - 0.5;
-                                    
+
                                 }
                                 break;
-
-
-                            case "c" :
-                                System.out.println("Preparing Cappuccino");
-                                break;
-                            case "l" : 
-                                System.out.println("Preparing Latte");
-                                break;
-                            default :
-                                System.out.println("Invalid product! Please select a product from the list above!");
+                                
+                                case "c" :
+                                    System.out.println("Preparing Cappuccino");
+                                     break;
+                                  case "l" : 
+                                   System.out.println("Preparing Latte");
+                                   break;
+                                    default :
+                                    System.out.println("Invalid product! Please select a product from the list above!");
                         }
                     }
         //After they make a choice ask user if they would like milk || sugar
