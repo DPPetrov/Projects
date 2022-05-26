@@ -167,7 +167,7 @@ public class CoffeeMachine01 {
         }
     }
     public static void prepareLatte()throws InterruptedException{
-        System.out.println("Please insert $2.50 ");
+        System.out.println("Please insert $3.50 ");
         pay = Double.parseDouble(sc.nextLine());
         if (pay > 3.5) {
             change = pay - 3.5;
