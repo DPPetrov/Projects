@@ -58,8 +58,8 @@ public class CoffeeMachine01 {
                     while(!input. equalsIgnoreCase("stop"))  {
                                 input = sc.nextLine();
                         switch (input.toLowerCase()){
-                        
-                            
+
+
                             case "e" :
 
                                 System.out.print("Please insert $1.50 ");
@@ -91,6 +91,10 @@ public class CoffeeMachine01 {
                                   case "l" :
                                    System.out.println("Preparing Latte");
                                    break;
+                                
+                                   case "stop":
+                                return;
+                                
                                     default :
                                     System.out.println("Invalid product! Please select a product from the list above!");
                         }
