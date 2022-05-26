@@ -1,89 +1,147 @@
+package com.company;
 
 import java.util.Scanner;
-public class CoffeeMachine01 {
 
-    static double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
-    static int cups = 9;
-    static String input;
-    static String question;
-    static Scanner sc = new Scanner(System.in);
+public class Main {
 
-    public static void main(String[] args)throws InterruptedException {
-        System.out.println("(  )   (   )  )   ");
-        Thread.sleep(400);
-        System.out.println("     ) (   )  (  (");
-        Thread.sleep(400);
-        System.out.println("     ( )  (    ) )");
-        Thread.sleep(400);
-        System.out.println("     _____________");
-        Thread.sleep(400);
-        System.out.println("    <_____________> ___");
-        Thread.sleep(400);
-        System.out.println("    |             |/ _ \\");
-        Thread.sleep(400);
-        System.out.println("    |               | | |");
-        Thread.sleep(400);
-        System.out.println("    |               |_| |");
-        Thread.sleep(400);
-        System.out.println(" ___|             |\\___/");
-        Thread.sleep(400);
-        System.out.println("/    \\___________/    \\");
-        Thread.sleep(400);
-        System.out.println("\\_____________________/");
-        Thread.sleep(1000);
-        System.out.println("Coffee Machine v 1.0.0");
-        System.out.println("______________________");
+        static double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
+        static int cups = 9;
+        static String input;
+        static String question;
+        static Scanner sc = new Scanner(System.in);
 
-        selectDrink();
+        public static void main(String[] args)throws InterruptedException {
+            System.out.println("(  )   (   )  )   ");
+            Thread.sleep(400);
+            System.out.println("     ) (   )  (  (");
+            Thread.sleep(400);
+            System.out.println("     ( )  (    ) )");
+            Thread.sleep(400);
+            System.out.println("     _____________");
+            Thread.sleep(400);
+            System.out.println("    <_____________> ___");
+            Thread.sleep(400);
+            System.out.println("    |             |/ _ \\");
+            Thread.sleep(400);
+            System.out.println("    |               | | |");
+            Thread.sleep(400);
+            System.out.println("    |               |_| |");
+            Thread.sleep(400);
+            System.out.println(" ___|             |\\___/");
+            Thread.sleep(400);
+            System.out.println("/    \\___________/    \\");
+            Thread.sleep(400);
+            System.out.println("\\_____________________/");
+            Thread.sleep(1000);
+            System.out.println("Coffee Machine v 1.0.0");
+            System.out.println("______________________");
 
-    }
+            selectDrink();
 
-    public static void selectDrink() throws InterruptedException{
+        }
 
-        Thread.sleep(1000);
-        System.out.println("====================");
-        System.out.println("Ingredients available:");
-        Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
-        System.out.printf("%.1fkg of Coffee beans\n",coffee);
-        System.out.printf("%.1fl of Milk\n", milk);
-        System.out.printf("%.1fml of Water\n", water);
-        System.out.printf("%.1fg of Sugar\n", sugar);
-        System.out.printf( "%dpcs of Cups\n", cups);
-        System.out.println("====================");
-        //Prompt the user to select one of the following drinks
-        Thread.sleep(1000);
-        System.out.println("You are welcome to one of the following drinks:");
-        System.out.println("====================");
-        Thread.sleep(1000);
-        System.out.println("(E)spresso, (C)appuccino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
-        System.out.println("====================");
-        System.out.println("Please type in your choice:  (Note: You can exit the program by typing 'Stop' )");
+        public static void selectDrink() throws InterruptedException{
 
-        String input = sc.nextLine();
-        //Calculate user choices:
-        while(!input. equalsIgnoreCase("stop"))  {
-            switch (input.toLowerCase()) {
-                case "e" -> prepareEspresso();
-                case "c" -> prepareCapuccino();
-                case "l" -> prepareLatte();
-                default -> System.out.println("Invalid product! Please select a product from the list above!");
+            Thread.sleep(1000);
+            System.out.println("====================");
+            System.out.println("Ingredients available:");
+            Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
+            System.out.printf("%.1fkg of Coffee beans\n",coffee);
+            System.out.printf("%.1fl of Milk\n", milk);
+            System.out.printf("%.1fml of Water\n", water);
+            System.out.printf("%.1fg of Sugar\n", sugar);
+            System.out.printf( "%dpcs of Cups\n", cups);
+            System.out.println("====================");
+            //Prompt the user to select one of the following drinks
+            Thread.sleep(1000);
+            System.out.println("You are welcome to any of the following drinks:");
+            System.out.println("====================");
+            Thread.sleep(1000);
+            System.out.println("(E)spresso, (C)appuccino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
+            System.out.println("====================");
+            System.out.println("Please type in your choice:  (Note: You can exit the program by typing 'Stop' )");
+
+            String input = sc.nextLine();
+            //Calculate user choices:
+            while(!input. equalsIgnoreCase("stop"))  {
+                if ("e".equalsIgnoreCase(input)) {
+                    prepareEspresso();
+                } else if ("c".equalsIgnoreCase(input)) {
+                    prepareCappuccino();
+                } else if ("l".equalsIgnoreCase(input)) {
+                    prepareLatte();
+                } else {
+                    System.out.println("Invalid product! Please select a product from the list above!");
+                }
+
+
+            }
+        }
+
+        public static void prepareEspresso () throws InterruptedException{
+            System.out.println("Please insert $1.50 ");
+            pay = Double.parseDouble(sc.nextLine());
+            if (pay >= 1.5) {
+                change = pay - 1.5;
+                coffee -= 30;
+                water -= 50;
+                cups -= 1;
+            }else{
+                System.out.println("Not enough money! ");
+                prepareEspresso();
+                System.out.println("Would you like sugar? (Y/N)");
+                input = sc.nextLine();
+
+                if (input.equalsIgnoreCase("y")){
+                    sugar -= 30;
+                }
+
+                System.out.println("Preparing Espresso...");
+                Thread.sleep(1500);
+                System.out.println("Grinding coffee beans...");
+                Thread.sleep(1800);
+                System.out.println("Boiling water...");
+                Thread.sleep(2000);
+                System.out.println("Almost done!");
+                Thread.sleep(1900);
+                System.out.printf("Drink ready! Your change is: %.2f\n", change);
+                Thread.sleep(1500);
+
+
+                if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
+                    System.out.println("Would you like another Drink?");
+                    question = sc.nextLine();
+                    if (question.equalsIgnoreCase("y")){
+
+                        selectDrink();
+
+                    }else if (question.equalsIgnoreCase("n")){
+                        System.out.println("Have a nice day! ^_^");
+                    }
+                    System.exit(0);
+                }else{
+                    System.out.println("Apologies! The machine needs to be refilled!");
+                    System.exit(0);
+
+                }
             }
 
 
         }
-    }
 
-    public static void prepareEspresso () throws InterruptedException{
-        System.out.println("Please insert $1.50 ");
-        pay = Double.parseDouble(sc.nextLine());
-        if (pay > 1.5) {
-            change = pay - 1.5;
-            coffee -= 30;
-            water -= 50;
-            cups -= 1;
-        }else{
-            System.out.println("Not enough money! ");
-            prepareEspresso();
+        public static void prepareCappuccino() throws InterruptedException{
+            System.out.println("Please insert $2.50 ");
+            pay = Double.parseDouble(sc.nextLine());
+            if (pay >= 2.5) {
+                change = pay - 2.5;
+                coffee -= 40;
+                milk -= 20;
+                water -= 50;
+                cups -= 1;
+            }else{
+                System.out.println("Not enough money! ");
+                prepareCappuccino();
+            }
             System.out.println("Would you like sugar? (Y/N)");
             input = sc.nextLine();
 
@@ -91,140 +149,92 @@ public class CoffeeMachine01 {
                 sugar -= 30;
             }
 
-        System.out.println("Preparing Espresso...");
-        Thread.sleep(1500);
+            System.out.println("Preparing Cappuccino...");
+            Thread.sleep(1500);
             System.out.println("Grinding coffee beans...");
             Thread.sleep(1800);
-                System.out.println("Boiling water...");
-                Thread.sleep(2000);
-                 System.out.println("Almost done!");
-                    Thread.sleep(1900);
-                     System.out.printf("Drink ready! Your change is: %.2f\n", change);
-                     Thread.sleep(1500);
+            System.out.println("Boiling water...");
+            Thread.sleep(2000);
+            System.out.println("Adding milk...");
+            Thread.sleep(1500);
+            System.out.println("Almost done!");
+            Thread.sleep(1900);
+            System.out.printf("Drink ready! Your change is: %.2f\n", change);
+            Thread.sleep(1500);
 
 
-                                        if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
-                                            System.out.println("Would you like another Drink?");
-                                            question = sc.nextLine();
-                                            if (question.equalsIgnoreCase("y")){
+            if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
+                System.out.println("Would you like another Drink?");
+                question = sc.nextLine();
+                if (question.equalsIgnoreCase("y")){
 
-                                                selectDrink();
+                    selectDrink();
 
-                                            }else if (question.equalsIgnoreCase("n")){
-                                                System.out.println("Have a nice day / evening!");
-                                            }
-                                                System.exit(0);
-                                            }else{
-                                            System.out.println("Apologies! The machine needs to be refilled!");
-                                            System.exit(0);
-
-                                        }
-            }
-
-
-    }
-
-    public static void prepareCapuccino() throws InterruptedException{
-        System.out.println("Please insert $2.50 ");
-        pay = Double.parseDouble(sc.nextLine());
-        if (pay > 2.5) {
-            change = pay - 2.5;
-            coffee -= 40;
-            milk -= 20;
-            water -= 50;
-            cups -= 1;
-        }else{
-            System.out.println("Not enough money! ");
-            prepareCapuccino();
-        }
-        System.out.println("Would you like sugar? (Y/N)");
-        input = sc.nextLine();
-
-        if (input.equalsIgnoreCase("y")){
-            sugar -= 30;
-        }
-
-        System.out.println("Preparing Cappuccino...");
-        Thread.sleep(1500);
-        System.out.println("Grinding coffee beans...");
-        Thread.sleep(1800);
-        System.out.println("Boiling water...");
-        Thread.sleep(2000);
-        System.out.println("Adding milk...");
-        Thread.sleep(1500);
-        System.out.println("Almost done!");
-        Thread.sleep(1900);
-        System.out.printf("Drink ready! Your change is: %.2f\n", change);
-        Thread.sleep(1500);
-
-
-        if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
-            System.out.println("Would you like another Drink?");
-            question = sc.nextLine();
-            if (question.equalsIgnoreCase("y")){
-
-                selectDrink();
-
-            }else if (question.equalsIgnoreCase("n")){
-                System.out.println("Have a nice day / evening!");
+                }else if (question.equalsIgnoreCase("n")){
+                    System.out.println("Have a nice day! ^_^");
+                    System.exit(0);
+                }
+            }else{
+                System.out.println("Apologies! The machine needs to be refilled!");
                 System.exit(0);
+
             }
-        }else{
-            System.out.println("Apologies! The machine needs to be refilled!");
-            System.exit(0);
-
-        }
-    }
-
-    public static void prepareLatte()throws InterruptedException{
-        System.out.println("Please insert $2.50 ");
-        pay = Double.parseDouble(sc.nextLine());
-        if (pay > 3.5) {
-            change = pay - 3.5;
-            coffee -= 45;
-            milk -= 25;
-            water -= 60;
-            cups -= 1;
-        }
-        System.out.println("Would you like sugar? (Y/N)");
-        input = sc.nextLine();
-
-        if (input.equalsIgnoreCase("y")){
-            sugar -= 30;
         }
 
-        System.out.println("Preparing Latte...");
-        Thread.sleep(1500);
-        System.out.println("Grinding coffee beans...");
-        Thread.sleep(1800);
-        System.out.println("Boiling water...");
-        Thread.sleep(2000);
-        System.out.println("Adding milk...");
-        Thread.sleep(1500);
-        System.out.println("Almost done!");
-        Thread.sleep(1900);
-        System.out.printf("Drink ready! Your change is: %.2f\n", change);
-        Thread.sleep(1500);
+        public static void prepareLatte()throws InterruptedException{
+            System.out.println("Please insert $3.50 ");
+            pay = Double.parseDouble(sc.nextLine());
+            if (pay >= 3.5) {
+                change = pay - 3.5;
+                coffee -= 45;
+                milk -= 25;
+                water -= 60;
+                cups -= 1;
+            }else{
+                System.out.println("Not enough money!");
+                prepareLatte();
+            }
+            System.out.println("Would you like sugar? (Y/N)");
+            input = sc.nextLine();
+
+            if (input.equalsIgnoreCase("y")){
+                sugar -= 30;
+            }
+
+            System.out.println("Preparing Latte...");
+            Thread.sleep(1500);
+            System.out.println("Grinding coffee beans...");
+            Thread.sleep(1800);
+            System.out.println("Boiling water...");
+            Thread.sleep(2000);
+            System.out.println("Adding milk...");
+            Thread.sleep(1500);
+            System.out.println("Almost done!");
+            Thread.sleep(1900);
+            System.out.printf("Drink ready! Your change is: %.2f\n", change);
+            Thread.sleep(1500);
 
 
-        if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
-            System.out.println("Would you like another Drink?");
-            question = sc.nextLine();
-            if (question.equalsIgnoreCase("y")){
+            if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
+                System.out.println("Would you like another Drink?");
+                question = sc.nextLine();
+                if (question.equalsIgnoreCase("y")){
 
-                selectDrink();
+                    selectDrink();
 
-            }else if (question.equalsIgnoreCase("n")){
-                System.out.println("Have a nice day / evening!");
+                }else if (question.equalsIgnoreCase("n")){
+                    System.out.println("Have a nice day! ^_^");
+                    System.exit(0);
+                }
+            }else{
+                System.out.println("Apologies! The machine needs to be refilled!");
                 System.exit(0);
-            }
-        }else{
-            System.out.println("Apologies! The machine needs to be refilled!");
-            System.exit(0);
 
+            }
         }
+
+
+
     }
 
 
-
-}
