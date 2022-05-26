@@ -30,7 +30,6 @@ public class CoffeeMachine01 {
         // Loading screen, displaying the available ingredients of the machine
         // values of the ingredients are preset and subject to change
         double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
-
         int cups = 9;
 
         Thread.sleep(1000);
