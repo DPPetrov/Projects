@@ -76,7 +76,7 @@ public class CoffeeMachine01 {
     public static void prepareEspresso () throws InterruptedException{
         System.out.println("Please insert $1.50 ");
         pay = Double.parseDouble(sc.nextLine());
-        if (pay > 1.5) {
+        if (pay >= 1.5) {
             change = pay - 1.5;
             coffee -= 30;
             water -= 50;
@@ -127,7 +127,7 @@ public class CoffeeMachine01 {
     public static void prepareCapuccino() throws InterruptedException{
         System.out.println("Please insert $2.50 ");
         pay = Double.parseDouble(sc.nextLine());
-        if (pay > 2.5) {
+        if (pay >= 2.5) {
             change = pay - 2.5;
             coffee -= 40;
             milk -= 20;
@@ -179,7 +179,7 @@ public class CoffeeMachine01 {
     public static void prepareLatte()throws InterruptedException{
         System.out.println("Please insert $2.50 ");
         pay = Double.parseDouble(sc.nextLine());
-        if (pay > 3.5) {
+        if (pay >= 3.5) {
             change = pay - 3.5;
             coffee -= 45;
             milk -= 25;
