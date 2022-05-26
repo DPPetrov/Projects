@@ -1,10 +1,12 @@
 
 import java.util.Scanner;
 public class CoffeeMachine01 {
+
     static double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
     static int cups = 9;
-    static String question;
+    static String input;
     static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args)throws InterruptedException {
         System.out.println("(  )   (   )  )   ");
         Thread.sleep(400);
@@ -36,6 +38,7 @@ public class CoffeeMachine01 {
     }
 
     public static void selectDrink() throws InterruptedException{
+
         Thread.sleep(1000);
         System.out.println("====================");
         System.out.println("Ingredients available:");
@@ -53,12 +56,11 @@ public class CoffeeMachine01 {
         Thread.sleep(1000);
         System.out.println("(E)spresso, (C)appuccino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
         System.out.println("====================");
-        System.out.println("Please type in your choice:  (You can exit the program by typing 'stop' )");
+        System.out.println("Please type in your choice:  (Note: You can exit the program by typing 'Stop' )");
 
         String input = sc.nextLine();
         //Calculate user choices:
         while(!input. equalsIgnoreCase("stop"))  {
-         
             switch (input){
 
 
@@ -72,8 +74,6 @@ public class CoffeeMachine01 {
                     prepareLatte();
                     break;
 
-                case "stop":
-                    return;
                 default :
                     System.out.println("Invalid product! Please select a product from the list above!");
             }
@@ -92,9 +92,9 @@ public class CoffeeMachine01 {
             cups -= 1;
         }
             System.out.println("Would you like sugar? (Y/N)");
-            question = sc.nextLine();
+            input = sc.nextLine();
 
-            if (question.equalsIgnoreCase("y")){
+            if (input.equalsIgnoreCase("y")){
                 sugar -= 30;
             }
 
@@ -112,14 +112,14 @@ public class CoffeeMachine01 {
 
                                         if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
                                             System.out.println("Would you like another Drink?");
-                                            question = sc.nextLine();
-                                            if (question.equalsIgnoreCase("y")){
+                                            input = sc.nextLine();
+                                            if (input.equalsIgnoreCase("y")){
 
                                                 selectDrink();
 
-                                            }else if (question.equalsIgnoreCase("n")){
-                                                return;
+                                            }else if (input.equalsIgnoreCase("n")){
 
+                                                System.exit(0);
                                             }
                                         }else{
                                             System.out.println("Apologies! The machine needs to be refilled!");
@@ -134,4 +134,7 @@ public class CoffeeMachine01 {
     public static void prepareLatte(){
 
     }
+
+
+
 }
