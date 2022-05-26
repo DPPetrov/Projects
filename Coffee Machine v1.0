@@ -208,7 +208,7 @@ public class CoffeeMachine01 {
                 selectDrink();
 
             }else if (question.equalsIgnoreCase("n")){
-
+                System.out.println("Have a nice day / evening!");
                 System.exit(0);
             }
         }else{
