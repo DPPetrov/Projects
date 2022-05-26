@@ -47,6 +47,7 @@ public class CoffeeMachine01 {
         Thread.sleep(1000);
         System.out.println("(E)spresso, (C)appucchino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
         System.out.println("====================");
+        System.out.print("Please type in your choice: ");
         //Ask user if they would like milk || sugar
         //If the user wants sugar, they must choose one of 3 lvls
         //Continue to preparation
