@@ -54,5 +54,8 @@ public class CoffeeMachine01 {
                             System.out.println("Cappuccino");
                             break;
                         default:
+                         System.out.println("Invalid product! Please select a product from the list above!");
+                            break;
+                    }
     }
 }
