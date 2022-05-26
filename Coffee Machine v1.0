@@ -31,7 +31,7 @@ public class CoffeeMachine01 {
         int cups = 9;
             Thread.sleep(1000);
             System.out.println("Ingredients available:");
-            Thread.sleep(400); //The ingredient table needs to update automatically. Values need to be initiated
+            Thread.sleep(1400); //The ingredient table needs to update automatically. Values need to be initiated
                 System.out.printf("%.1fkg of Coffee beans\n",coffee);
                     System.out.printf("%.1fl of Milk\n", milk);
                         System.out.printf("%.1fml of Water\n", water);
