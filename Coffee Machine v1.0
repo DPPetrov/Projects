@@ -61,21 +61,12 @@ public class CoffeeMachine01 {
         String input = sc.nextLine();
         //Calculate user choices:
         while(!input. equalsIgnoreCase("stop"))  {
-            switch (input.toLowerCase){
-
-
-                case "e" :
-                    prepareEspresso();
-                    break;
-                case "c" :
-                    prepareCapuccino();
-                    break;
-                case "l" :
-                    prepareLatte();
-                    break;
-
-                default :
-                    System.out.println("Invalid product! Please select a product from the list above!");
+        
+            switch (input.toLowerCase()) {
+                case "e" -> prepareEspresso();
+                case "c" -> prepareCapuccino();
+                case "l" -> prepareLatte();
+                default -> System.out.println("Invalid product! Please select a product from the list above!");
             }
 
 
