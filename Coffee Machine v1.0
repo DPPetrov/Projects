@@ -61,7 +61,7 @@ public class CoffeeMachine01 {
         String input = sc.nextLine();
         //Calculate user choices:
         while(!input. equalsIgnoreCase("stop"))  {
-            switch (input){
+            switch (input.toLowerCase){
 
 
                 case "e" :
