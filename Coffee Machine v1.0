@@ -36,7 +36,7 @@ public class CoffeeMachine01 {
                     System.out.println("1.00l of Milk");
                         System.out.printf("500ml of Water");
                             System.out.printf("%.2fg of Sugar\n", sugar);
-                                System.out.printf( cup + "pcs of Cups");
+                                System.out.printf("%dpcs of Cups", cups);
 
           //Prompt the user to select one of the following drinks
         System.out.println("You are welcome to one of the following drinks:");
