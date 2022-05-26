@@ -30,7 +30,7 @@ public class CoffeeMachine01 {
         // Loading screen, displaying the available ingredients of the machine
         // values of the ingredients are preset and subject to change
 
-        double coffee = 1000, milk = 1000, water = 500, sugar = 200;
+        double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
         String question = "";
         int cups = 9;
             Thread.sleep(1000);
@@ -58,10 +58,14 @@ public class CoffeeMachine01 {
                     while(!input. equalsIgnoreCase("exit")) {
                                 input = sc.nextLine();
                         switch (input.toLowerCase()) {
-                            case "e" -> System.out.println("Preparing Espresso");
-                            if (coffee > 10 && water > 20){
-
-                            }
+                            case "e" :
+                                
+                                System.out.print("Please insert $0.5 ");
+                                pay = Double.parseDouble(sc.nextLine());
+                                if (pay > )
+                                break;
+                                    
+                            
                             case "c" -> System.out.println("Preparing Cappuccino");
                             case "l" -> System.out.println("Preparing Latte");
                             default -> System.out.println("Invalid product! Please select a product from the list above!");
