@@ -99,6 +99,11 @@ public class CoffeeMachine01 {
         }
             System.out.println("Would you like sugar? (Y/N)");
             question = sc.nextLine();
+            
+            if (question.equalsIgnoreCase("y")){
+                sugar -= 30;
+            }
+            
         System.out.println("Preparing Espresso...");
         Thread.sleep(1500);
             System.out.println("Grinding coffee beans...");
@@ -121,6 +126,18 @@ public class CoffeeMachine01 {
                             Thread.sleep(1000);
                                  System.out.printf( "%dpcs of Cups\n", cups);
                                      System.out.println("====================");
+                                        Thread.sleep(1300);
+                                        
+                                        if (coffee > 10 && sugar > 10 && milk > 10 && water > 10) {
+                                            System.out.println("Would you like another Drink?");
+                                            question = sc.nextLine();
+                                            if (question.equalsIgnoreCase("y")){
+                                             
+                                            }
+                                        }else{
+                                            System.out.println("Apologies! The machine needs to be refilled!");
+                                           
+                                        }
 
 
     }
