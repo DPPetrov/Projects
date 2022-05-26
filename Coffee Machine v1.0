@@ -53,6 +53,9 @@ public class CoffeeMachine01 {
                         case "c":
                             System.out.println("Cappuccino");
                             break;
+                            case "l":
+                            System.out.println("Latte");
+                            break;
                         default:
                          System.out.println("Invalid product! Please select a product from the list above!");
                             break;
