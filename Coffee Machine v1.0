@@ -62,13 +62,13 @@ public class CoffeeMachine01 {
             switch (input){
 
 
-                case "E" :
+                case "e" :
                     prepareEspresso();
                     break;
-                case "C" :
+                case "c" :
                     prepareCapuccino();
                     break;
-                case "L" :
+                case "l" :
                     prepareLatte();
                     break;
 
