@@ -29,19 +29,21 @@ public class CoffeeMachine01 {
 
         double coffee = 1000, milk = 1000, water = 500, sugar = 200;
         int cups = 9;
-            Thread.sleep(500);
+            Thread.sleep(1000);
             System.out.println("Ingredients available:");
             Thread.sleep(400); //The ingredient table needs to update automatically. Values need to be initiated
-                System.out.printf("%.2fkg of Coffee beans\n",coffee);
-                    System.out.printf("%.2fl of Milk\n", milk);
-                        System.out.printf("%.2fml of Water\n", water);
-                            System.out.printf("%.2fg of Sugar\n", sugar);
+                System.out.printf("%.1fkg of Coffee beans\n",coffee);
+                    System.out.printf("%.1fl of Milk\n", milk);
+                        System.out.printf("%.1fml of Water\n", water);
+                            System.out.printf("%.1fg of Sugar\n", sugar);
                                 System.out.printf( "%dpcs of Cups", cups);
 
           //Prompt the user to select one of the following drinks
         System.out.println("You are welcome to one of the following drinks:");
         System.out.println("(E)spresso, (C)appucchino, (L)atte - Please, use the provided hotkeys (E, C, L) for your convenience!");
-
+        //Ask user if they would like milk || sugar
+        //If the user wants sugar, they must choose one of 3 lvls
+        //Continue to preparation
 
     }
 }
