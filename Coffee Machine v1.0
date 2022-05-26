@@ -30,9 +30,7 @@ public class CoffeeMachine01 {
         // Loading screen, displaying the available ingredients of the machine
         // values of the ingredients are preset and subject to change
 
-        double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
-        String question;
-        int cups = 9;
+       
             Thread.sleep(1000);
         System.out.println("====================");
             System.out.println("Ingredients available:");
@@ -91,10 +89,10 @@ public class CoffeeMachine01 {
                                   case "l" :
                                    System.out.println("Preparing Latte");
                                    break;
-                                
+
                                    case "stop":
                                 return;
-                                
+
                                     default :
                                     System.out.println("Invalid product! Please select a product from the list above!");
                         }
@@ -105,14 +103,20 @@ public class CoffeeMachine01 {
     }
 
     public static void prepareEspresso () throws InterruptedException{
-        System.out.println("Preparing Espresso...");
-        Thread.sleep(1500);
-        System.out.println("Grinding coffee beans...");
-        Thread.sleep(1800);
-        System.out.println("Boiling water...");
-        Thread.sleep(2000);
-        System.out.println("Almost done!");
-        Thread.sleep(1900);
-        System.out.println("Drink ready!");
+        double coffee = 1000, milk = 1000, water = 500, sugar = 200, change = 0, pay;
+        String question;
+        int cups = 9;
+        
+            System.out.println("Preparing Espresso...");
+            Thread.sleep(1500);
+                System.out.println("Grinding coffee beans...");
+                Thread.sleep(1800);
+                    System.out.println("Boiling water...");
+                    Thread.sleep(2000);
+                     System.out.println("Almost done!");
+                        Thread.sleep(1900);
+                         System.out.println("Drink ready!");
+                        
+        
     }
 }
