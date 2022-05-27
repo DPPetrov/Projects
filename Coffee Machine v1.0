@@ -162,7 +162,7 @@ public class CoffeeMachine01 {
 
 
         if (coffee > 10 && sugar > 10 && milk > 10 && water > 10 && cups > 0) {
-            System.out.println("Would you like another Drink?");
+            System.out.println("Would you like another Drink?(Y/N)");
             question = sc.nextLine();
             if (question.equalsIgnoreCase("y")){
 
