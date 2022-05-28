@@ -156,6 +156,10 @@ public class CoffeeMachine {
             System.out.println("Grinding coffee beans...");
             Thread.sleep(1800);
             System.out.println("Boiling water...");
+             Thread.sleep(2500);
+                if (input.equalsIgnoreCase("y"){
+                System.out.println("Adding sugar...");
+                }
             Thread.sleep(2000);
             System.out.println("Adding milk...");
             Thread.sleep(1500);
@@ -208,6 +212,10 @@ public class CoffeeMachine {
             System.out.println("Grinding coffee beans...");
             Thread.sleep(1800);
             System.out.println("Boiling water...");
+             Thread.sleep(2500);
+                if (input.equalsIgnoreCase("y"){
+                System.out.println("Adding sugar...");
+                }
             Thread.sleep(2000);
             System.out.println("Adding milk...");
             Thread.sleep(1500);
