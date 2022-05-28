@@ -114,8 +114,9 @@ public class CoffeeMachine {
 
                     }else if (question.equalsIgnoreCase("n")){
                         System.out.println("Have a nice day! =^_^=");
+                        System.exit(0);
                     }
-                    System.exit(0);
+                    
                 }else{
                     System.out.println("Apologies! The machine needs to be refilled!");
                     System.exit(0);
@@ -179,7 +180,7 @@ public class CoffeeMachine {
         }
 
         public static void prepareLatte()throws InterruptedException{
-            System.out.println("Please insert $2.50 ");
+            System.out.println("Please insert $3.50 ");
             pay = Double.parseDouble(sc.nextLine());
             if (pay >= 3.5) {
                 change = pay - 3.5;
