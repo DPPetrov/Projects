@@ -100,6 +100,10 @@ public class CoffeeMachine {
                 System.out.println("Boiling water...");
                 Thread.sleep(2000);
                 System.out.println("Almost done!");
+                Thread.sleep(2500);
+                if (input.equalsIgnoreCase("y"){
+                System.out.println("Adding sugar...");
+                }
                 Thread.sleep(1900);
                 System.out.printf("Drink ready! Your change is: $%.2f\n", change);
                 Thread.sleep(1500);
