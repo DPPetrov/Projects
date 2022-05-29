@@ -6,7 +6,7 @@ I. The first program in my list is a console-based coffee-machine.
 
 ##1.1 What is the program about?
 
-"Coffee Machine" is created in Java, and it's Purpose if to show off understanding 
+"Coffee Machine" is created in Java using InteliJ 2022 and it's Purpose if to show off understanding 
 of basic and fundamental concepts of the language - variables, conditional statements, loops, switch-cases, global variables, global classes, exception handling.
 The program is based on my own epxperience and understanding of methods and classes.
 
@@ -23,4 +23,7 @@ three bevarages - Espresso, Cappuccino and Latte.
  @ After the choice has been made, the user inputs the requested amount and if it is enough, the process begins, or they are prompted to insert a sufficient amount, 
  in order to continue. Once the process is finished, the remaining ingredients and change (if any) are displayed, and the user can either "Stop" the process, or 
  continue until the machine is out of ingredients, at which point the program will display a message and shut down on its own.
+ 
+ # How to run the program
+ II. As sometimes the "Fundamentals.exe" does not execute, I have created a Run.bat file that will start the program in its stead. Simply run the "Run" in order to begin.
  
