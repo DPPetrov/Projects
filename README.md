@@ -22,5 +22,5 @@ three bevarages - Espresso, Cappuccino and Latte.
  continue until the machine is out of ingredients, at which point the program will display a message and shut down on its own.
  
  # How to run the program
- II. As sometimes the "Fundamentals.exe" does not execute, I have created a Run.bat file that will start the program in its stead. Simply run the "Run" in order to begin.
+ II. As sometimes the "Fundamentals.exe" does not execute, I have created a Run.bat file that will start the program instead. Simply run the "Run" file in order to begin.
  
