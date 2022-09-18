@@ -1,14 +1,10 @@
-# Projects
-
 #Contents
-
-I. The first program in my list is a console-based coffee-machine.
 
 ##1.1 What is the program about?
 
-"Coffee Machine" is created in Java using InteliJ 2022 and it's Purpose if to show off understanding 
-of basic and fundamental concepts of the language - variables, conditional statements, loops, switch-cases, global variables, global classes, exception handling.
-The program is based on my own epxperience and understanding of methods and classes.
+###"Coffee Machine" is created in Java using InteliJ 2022 and its purpose is to show understanding 
+###of basic and fundamental concepts of the language - variables, conditional statements, loops, switch-cases, global variables, global ###classes, exception handling.
+###The program is based on my own epxperience and understanding of methods and classes.
 
 ##1.2 How does it work?
 
